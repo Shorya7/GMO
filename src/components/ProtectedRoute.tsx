@@ -1,7 +1,11 @@
 import React from 'react';
 import { Navigate } from 'react-router-dom';
 
-const ProtectedRoute = ({ Component }: { Component: React.ComponentType }) => {
+interface ProtectedRouteProps {
+  Component: React.ComponentType;
+}
+
+const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ Component }) => {
   const userDetails = localStorage.getItem('userDetails');
 
   if (!userDetails) {
