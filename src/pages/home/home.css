@@ -1,0 +1,16 @@
+.sub_count{
+    font-size: 15px;
+    color: gray;
+    font-weight: 600;
+}
+.dept_selection{
+    margin: 30px 60px;
+}
+.dept_selection h1{
+    margin-bottom: 10px;
+}
+.grid_table{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
