@@ -17,7 +17,7 @@ const [fetch, setFetch] = useState<boolean>(false);
     const fetchPosts = async () => {
       try {
         const response = await axios.get('https://jsonplaceholder.typicode.com/posts');
-        console.log(response.data)
+        // console.log(response.data)
         setPosts(response.data);
         setFetch(true);
       } catch (error) {

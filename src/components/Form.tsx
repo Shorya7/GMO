@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent } from 'react';
+import React, { useState, ChangeEvent, FormEvent } from 'react';
 import './form.css';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
@@ -17,7 +17,8 @@ const Form: React.FC = () => {
   const emailpattern: RegExp = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
   const navigate = useNavigate();
 
-  const handleSubmit = () => {
+  const handleSubmit = (e: FormEvent) => {
+    e.preventDefault();
     if (name && phone && email && !phoneerr && !erremail) {
       localStorage.setItem('userDetails', JSON.stringify({ name, phone, email }));
       navigate('/');
@@ -55,6 +56,7 @@ const Form: React.FC = () => {
             <div className="head_log">Register</div>
 
             <Box
+            onSubmit={handleSubmit}
               component="form"
               sx={{
                 "& > :not(style)": {
@@ -94,6 +96,7 @@ const Form: React.FC = () => {
             </Box>
 
             <Box
+            onSubmit={handleSubmit}
               component="form"
               sx={{
                 "& > :not(style)": {
@@ -140,6 +143,7 @@ const Form: React.FC = () => {
             </Box>
 
             <Box
+            onSubmit={handleSubmit}
               component="form"
               sx={{
                 "& > :not(style)": {
@@ -178,13 +182,14 @@ const Form: React.FC = () => {
                 }}
                 InputLabelProps={{ style: { color: 'black' } }}
               />
-            </Box>
+            
 
             <div className="sub_btn_log">
-              <button type="submit" onClick={handleSubmit}>
+              <button type="submit">
                 Submit
               </button>
             </div>
+            </Box>
           </div>
         </div>
       </div>
