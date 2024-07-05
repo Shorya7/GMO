@@ -4,6 +4,7 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import InputAdornment from '@mui/material/InputAdornment';
 import { useNavigate } from 'react-router-dom';
+import logo from '../assets/GMO_logo.webp'
 
 const Form: React.FC = () => {
   const [name, setName] = useState<string>('');
@@ -41,10 +42,10 @@ const Form: React.FC = () => {
       <div className="mainbody">
         <div className="left_side">
           <div className="left_logo">
-            {/* <img src={HealthFood} alt="Healthy" /> */}
+            <img src={logo} alt="GrowMeOrganic" />
           </div>
           <div className="left_cont">
-            <span id="welcome">Welcome </span> to the HealthOS
+            <span id="welcome">Welcome </span> to your World
           </div>
         </div>
         <div className="right_side">
