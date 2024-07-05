@@ -4,7 +4,8 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import InputAdornment from '@mui/material/InputAdornment';
 import { useNavigate } from 'react-router-dom';
-import logo from '../assets/GMO_logo.webp'
+import logo from '../assets/GMO_logo.webp';
+import toast from 'react-hot-toast';
 
 const Form: React.FC = () => {
   const [name, setName] = useState<string>('');
@@ -20,8 +21,9 @@ const Form: React.FC = () => {
     if (name && phone && email && !phoneerr && !erremail) {
       localStorage.setItem('userDetails', JSON.stringify({ name, phone, email }));
       navigate('/');
+      toast.success(`Hi! Welcome ${name}`);
     } else {
-      alert('Please fill in all details correctly.');
+      toast.error('Please fill in all details correctly');
     }
   };
 
